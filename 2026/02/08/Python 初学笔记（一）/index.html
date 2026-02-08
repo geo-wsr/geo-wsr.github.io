@@ -20,22 +20,26 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="WSR&#39;s Web">
-<meta property="og:url" content="http://example.com/index.html">
+    <meta name="description" content="程序设计与Python环境程序设计与算法的概念程序设计发展历程 机器语言：二进制，不用翻译解释。执行速度快。  汇编语言：使用注记符号来表示机器语言，需要翻译成机器语言后才能执行。  高级语言：接近自然语言，使用与自然语言语法接近的自封闭词法体系。  语言处理系统：负责把高级语言的源程序转化为机器语言的软件。同一种高级语言在面对不同机型时应该使用不同的语言处理系统。  高级语言的编译和解释：  编">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 初学笔记（一）">
+<meta property="og:url" content="http://example.com/2026/02/08/Python%20%E5%88%9D%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="WSR&#39;s Web">
+<meta property="og:description" content="程序设计与Python环境程序设计与算法的概念程序设计发展历程 机器语言：二进制，不用翻译解释。执行速度快。  汇编语言：使用注记符号来表示机器语言，需要翻译成机器语言后才能执行。  高级语言：接近自然语言，使用与自然语言语法接近的自封闭词法体系。  语言处理系统：负责把高级语言的源程序转化为机器语言的软件。同一种高级语言在面对不同机型时应该使用不同的语言处理系统。  高级语言的编译和解释：  编">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-02-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-02-08T04:41:24.573Z">
 <meta property="article:author" content="Wang Sirui">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2026/02/08/Python%20%E5%88%9D%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2026/02/08/Python%20%E5%88%9D%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/","path":"2026/02/08/Python 初学笔记（一）/","title":"Python 初学笔记（一）"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>WSR's Web</title>
+<title>Python 初学笔记（一） | WSR's Web</title>
   
 
 
@@ -82,7 +86,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">WSR's Web</h1>
+      <p class="site-title">WSR's Web</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -104,7 +108,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -117,6 +121,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%B8%8EPython%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">程序设计与Python环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%AE%97%E6%B3%95%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">程序设计与算法的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B"><span class="nav-number">1.1.1.</span> <span class="nav-text">程序设计发展历程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.2.</span> <span class="nav-text">算法的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E8%B4%A8%E9%87%8F%E8%AF%84%E4%BB%B7"><span class="nav-number">1.1.3.</span> <span class="nav-text">程序质量评价</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-%E8%AF%AD%E8%A8%80%E5%8F%8A%E5%85%B6%E7%89%B9%E7%82%B9"><span class="nav-number">1.2.</span> <span class="nav-text">Python 语言及其特点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">1.2.1.</span> <span class="nav-text">Python 程序的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-%E7%A8%8B%E5%BA%8F%E5%85%A5%E9%97%A8"><span class="nav-number">1.2.2.</span> <span class="nav-text">Python 程序入门</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%A4%96%E9%83%A8%E5%BA%93"><span class="nav-number">1.3.</span> <span class="nav-text">添加外部库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E5%9F%BA%E4%BA%8EInternet%E5%AE%89%E8%A3%85%E5%A4%96%E9%83%A8%E5%BA%93"><span class="nav-number">1.3.1.</span> <span class="nav-text">直接基于Internet安装外部库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E5%B7%B2%E7%BB%8F%E4%B8%8B%E8%BD%BD%E7%9A%84WHL%E6%96%87%E6%A1%A3%E5%AE%89%E8%A3%85%E5%A4%96%E9%83%A8%E5%BA%93"><span class="nav-number">1.3.2.</span> <span class="nav-text">利用已经下载的WHL文档安装外部库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8EIDLE%E8%B0%83%E8%AF%95Python%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.4.</span> <span class="nav-text">基于IDLE调试Python程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E8%B0%83%E8%AF%95%E5%85%A5%E9%97%A8"><span class="nav-number">1.4.1.</span> <span class="nav-text">程序调试入门</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8Python%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83%E8%B0%83%E8%AF%95%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.4.2.</span> <span class="nav-text">利用Python的调试环境调试程序</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -146,16 +151,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2026/02/08/Python%20%E5%88%9D%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -169,13 +175,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | WSR's Web">
+      <meta itemprop="name" content="Python 初学笔记（一） | WSR's Web">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/02/08/Python%20%E5%88%9D%E5%AD%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="post-title-link" itemprop="url">Python 初学笔记（一）</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Python 初学笔记（一）
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -198,8 +204,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="程序设计与Python环境"><a href="#程序设计与Python环境" class="headerlink" title="程序设计与Python环境"></a>程序设计与Python环境</h1><h2 id="程序设计与算法的概念"><a href="#程序设计与算法的概念" class="headerlink" title="程序设计与算法的概念"></a>程序设计与算法的概念</h2><h3 id="程序设计发展历程"><a href="#程序设计发展历程" class="headerlink" title="程序设计发展历程"></a>程序设计发展历程</h3><ol>
+    <div class="post-body" itemprop="articleBody"><h1 id="程序设计与Python环境"><a href="#程序设计与Python环境" class="headerlink" title="程序设计与Python环境"></a>程序设计与Python环境</h1><h2 id="程序设计与算法的概念"><a href="#程序设计与算法的概念" class="headerlink" title="程序设计与算法的概念"></a>程序设计与算法的概念</h2><h3 id="程序设计发展历程"><a href="#程序设计发展历程" class="headerlink" title="程序设计发展历程"></a>程序设计发展历程</h3><ol>
 <li><p>机器语言：二进制，不用翻译解释。执行速度快。</p>
 </li>
 <li><p>汇编语言：使用注记符号来表示机器语言，需要翻译成机器语言后才能执行。</p>
@@ -281,7 +286,6 @@
 <li>“Quit”：立马终止该程序。</li>
 </ol>
 
-      
     </div>
 
     
@@ -289,92 +293,22 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/02/05/hello-world/" rel="prev" title="Hello World">
+                  <i class="fa fa-angle-left"></i> Hello World
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2026/02/05/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Wang Sirui">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WSR's Web">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | WSR's Web">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/02/05/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2026-02-05 17:11:03" itemprop="dateCreated datePublished" datetime="2026-02-05T17:11:03+08:00">2026-02-05</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
 
 
