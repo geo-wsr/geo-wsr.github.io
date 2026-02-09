@@ -1,0 +1,136 @@
+/* ===================== 全局字体配置（宋体+新罗马） ===================== */
+body {
+  background-color: pink !important;
+}
+body {
+  font-family: "Times New Roman", "SimSun", serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.markdown-body {
+  font-family: "Times New Roman", "SimSun", serif;
+  font-size: 15px;
+}
+
+/* ===================== 标题自动编号 + 一级标题居中 ===================== */
+/* 初始化标题计数器：h1为一级计数器，h2/h3/h4继承 */
+.markdown-body {
+  counter-reset: h1-counter; /* 初始化一级标题计数器 */
+}
+
+/* 1. 一级标题：居中 + 自动编号（1.、2.） */
+.markdown-body h1 {
+  font-family: "Times New Roman", "SimSun", serif;
+  font-size: 28px;
+  color: #2c3e50;
+  font-weight: bold;
+  margin: 30px 0 20px;
+  text-align: center; /* 一级标题居中 */
+  counter-reset: h2-counter; /* 每一个h1重置h2计数器 */
+  position: relative;
+}
+/* 一级标题编号（1.、2.） */
+.markdown-body h1:before {
+  counter-increment: h1-counter; /* 一级计数器自增 */
+  content: counter(h1-counter) ". "; /* 编号格式：1. 2. */
+  color: #e74c3c; /* 编号颜色 */
+}
+
+/* 2. 二级标题：自动编号（1.1.、1.2.） */
+.markdown-body h2 {
+  font-family: "Times New Roman", "SimSun", serif;
+  font-size: 24px;
+  color: #34495e;
+  font-weight: bold;
+  margin: 25px 0 15px;
+  counter-reset: h3-counter; /* 每一个h2重置h3计数器 */
+  padding-left: 12px;
+  border-left: 4px solid #2ecc71;
+}
+/* 二级标题编号（1.1.、1.2.） */
+.markdown-body h2:before {
+  counter-increment: h2-counter; /* 二级计数器自增 */
+  content: counter(h1-counter) "." counter(h2-counter) ". "; /* 拼接一级+二级编号 */
+  color: #2ecc71;
+}
+
+/* 3. 三级标题：自动编号（1.1.1.、1.1.2.） */
+.markdown-body h3 {
+  font-family: "Times New Roman", "SimSun", serif;
+  font-size: 20px;
+  color: #9b59b6;
+  font-weight: bold;
+  margin: 20px 0 10px;
+  counter-reset: h4-counter; /* 每一个h3重置h4计数器 */
+}
+/* 三级标题编号 */
+.markdown-body h3:before {
+  counter-increment: h3-counter;
+  content: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) ". ";
+  color: #9b59b6;
+}
+
+/* 4. 四级标题（可选，1.1.1.1.） */
+.markdown-body h4 {
+  font-family: "Times New Roman", "SimSun", serif;
+  font-size: 18px;
+  color: #e67e22;
+  font-weight: bold;
+  margin: 15px 0 8px;
+}
+.markdown-body h4:before {
+  counter-increment: h4-counter;
+  content: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) ". ";
+  color: #e67e22;
+}
+
+/* ===================== 有序列表三种样式（保留） ===================== */
+/* 样式1：默认数字. */
+.markdown-body ol {
+  padding-left: 30px;
+  margin: 15px 0;
+  list-style: none;
+  counter-reset: li-num;
+}
+.markdown-body ol li {
+  margin: 8px 0;
+  position: relative;
+}
+.markdown-body ol li:before {
+  counter-increment: li-num;
+  content: counter(li-num) ".";
+  color: #e74c3c;
+  font-weight: bold;
+  position: absolute;
+  left: -24px;
+}
+
+/* 样式2：(数字) */
+.markdown-body ol.ol-bracket {
+  counter-reset: li-bracket;
+}
+.markdown-body ol.ol-bracket li:before {
+  counter-increment: li-bracket;
+  content: "(" counter(li-bracket) ")";
+  color: #2ecc71;
+  left: -28px;
+}
+
+/* 样式3：圈数字 */
+.markdown-body ol.ol-circle li:before {
+  counter-increment: li-circle;
+  /* 用CSS计数器的 cjk-decimal 格式实现圈数字，支持1-20 */
+  content: counter(li-circle, cjk-decimal);
+  color: #3498db;
+  font-size: 14px;
+  position: absolute;
+  left: -24px;
+  font-weight: bold;
+}
+
+/* 嵌套列表兼容 */
+.markdown-body ol ol {
+  padding-left: 35px;
+}
